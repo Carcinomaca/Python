@@ -1,43 +1,21 @@
-# Python
-import speech_recognition as sr
-import pyttsx3
-import pywhatkit
-import wikipedia
+practical 5th
+f=poly([1,-2,0,1],'x','c');
+disp(f,'the polynomial f is');
+k=horner(f,2);
+disp(k,'value of polynomial f at x=2 is');
 
-listener = sr.Recognizer()
-engine = pyttsx3.init()
+g=poly([1,0,-1],'x','r');
+disp(g,'the polynomial g is');
+l=horner(g,3);
+disp(l,'the value of polynomial g at x=3 is');
 
-def talk(text):
-    engine.say(text)
-    engine.runAndWait()
-
-def take_command():
-    try:
-        with sr.Microphone() as source:
-            print('Listening...')
-            voice = listener.listen(source)
-            command = listener.recognize_google(voice)
-            command = command.lower()
-            if 'jarvis' in command:
-                command = command.replace('jarvis', '')
-                print(command)
-    except:
-        pass
-    return command
-
-def run_jarvis():
-    command = take_command()
-    print(command)
-    if 'play' in command:
-        song = command.replace('play', '')
-        talk('Playing ' + song)
-        pywhatkit.playonyt(song)
-    elif 'search' in command:
-        search_term = command.replace('search', '')
-        info = wikipedia.summary(search_term, 1)
-        print(info)
-        talk(info)
-    else:
-        talk('Please say the command again.')
-
-run_jarvis()
+x=poly(0,'x');
+h=2*x^3-7*x^2+4*x-15;
+disp(h,'the polynomial h is');
+m=horner(h,5);
+disp(m,'value of the polynomial h at x=5 is');
+x=poly(0,'x');
+p=2*x^3-7*x^2+4*x-15
+disp(p,'the polynomial is');
+k=horner(p,5);
+disp(k,'value of the polynomial p at x=5 is');
