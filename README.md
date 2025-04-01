@@ -104,4 +104,16 @@ function [val]=simpson38(a,b,n,p)
     val = val*(3*h/8);
     disp(val)
 endfunction
+prac9:
+function[y1]=rk(x0,y0,h,x,f)
+    h = 0.2
+    k1=h*f(x0,y0)
+    k2=h*f(x0+h,y0+k1)
+    y1=y0+0.5*(k1+k2)
+endfunction
+prac10:
+x = [2,3,7,9,15,20]
+y = [25,20,17,14,11,8]
+plot(x,y)
+
 
