@@ -105,15 +105,14 @@ function [val]=simpson38(a,b,n,p)
     disp(val)
 endfunction
 prac8:Eulerm
-function[y0] = eulerm(x0,y0,h,x,f)
-    n = (x-x0)/h;
-    for i =1:n;
-        y0 = y0 + f(x0,y0)*h;
-        x0 = x0 +h;
-        y0
-    end
+function [y0]=eulerm(x0,y0, h, x, f)
+n=(x-x0)/h;
+for i=1:n
+y0=y0+f(x0,y0) *h;
+x0=x0+h;
+y0
+end
 endfunction
-
 prac9:Runge kutta 2nd order. 
 function[y1]=rk(x0,y0,h,x,f)
     h = 0.2
