@@ -1,4 +1,4 @@
-prac1:
+prac1:Bisection method
 p = poly([-3,-1,0,1],'x','c');
 a = 1
 b = 2
@@ -15,7 +15,7 @@ for i = 1:10
 end
 disp(p);
 disp(c);
-prac2:
+prac2:false position method
 v = poly([1,-3,1],'x','c')
 x1 = 1;
 x2 = 3;
@@ -33,7 +33,7 @@ for i = 1:5
 end
 disp(v);
 disp(x3);
-prac3:
+prac3:false pos method using function
 function[c]=FalsePos(a,b,p,n)
     while n >0
         fx = horner(p,a)
@@ -49,7 +49,7 @@ function[c]=FalsePos(a,b,p,n)
     end
     disp(c)
 endfunction
-prac4:
+prac4:newton raphson
 function [x2] = newraph(x1,p,n)
     p1 = derivat(p);
     for i = 1:n
@@ -60,7 +60,7 @@ function [x2] = newraph(x1,p,n)
         
     end
 endfunction
-prac5:
+prac5:trapezoidal
 function[val] = trapezoidal(a,b,n,p)
     h = (b-a)/n
     x = a:h:b
@@ -72,7 +72,7 @@ function[val] = trapezoidal(a,b,n,p)
     val = val*(h/2)
     disp(val)
 endfunction
-prac6:
+prac6:simpson1/3
 function [val]=simpson13(a,b,n,p)
     h = (b-a)/n;
     x = a:h:b
@@ -88,7 +88,7 @@ function [val]=simpson13(a,b,n,p)
     val = val*(h/3);
     disp(val)
 endfunction
-prac7:
+prac7:simpson3/8
 function [val]=simpson38(a,b,n,p)
     h = (b-a)/n;
     x = a:h:b
@@ -104,7 +104,7 @@ function [val]=simpson38(a,b,n,p)
     val = val*(3*h/8);
     disp(val)
 endfunction
-prac8:
+prac8:Eulerm
 function[y0] = eulerm(x0,y0,h,x,f)
     n = (x-x0)/h;
     for i =1:n;
@@ -114,18 +114,18 @@ function[y0] = eulerm(x0,y0,h,x,f)
     end
 endfunction
 
-prac9:
+prac9:Runge kutta 2nd order. 
 function[y1]=rk(x0,y0,h,x,f)
     h = 0.2
     k1=h*f(x0,y0)
     k2=h*f(x0+h,y0+k1)
     y1=y0+0.5*(k1+k2)
 endfunction
-prac10:
+prac10:scattered diagram.
 x = [2,3,7,9,15,20]
 y = [25,20,17,14,11,8]
 plot(x,y)
-prac11:
+prac11:karl pearson
 function[r]=correl(x,y)
     n=length(x)
     sx=sum(x)
