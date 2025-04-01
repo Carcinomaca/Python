@@ -104,6 +104,16 @@ function [val]=simpson38(a,b,n,p)
     val = val*(3*h/8);
     disp(val)
 endfunction
+prac8:
+function[y0] = eulerm(x0,y0,h,x,f)
+    n = (x-x0)/h;
+    for i =1:n;
+        y0 = y0 + f(x0,y0)*h;
+        x0 = x0 +h;
+        y0
+    end
+endfunction
+
 prac9:
 function[y1]=rk(x0,y0,h,x,f)
     h = 0.2
@@ -115,5 +125,26 @@ prac10:
 x = [2,3,7,9,15,20]
 y = [25,20,17,14,11,8]
 plot(x,y)
+prac11:
+function[r]=correl(x,y)
+    n=length(x)
+    sx=sum(x)
+    sy=sum(y)
+    sxy=sum(x*y)
+    sxx=sum(x*x)
+    syy=sum(y*y)
+    xmean=sx/n
+    ymean=sy/n
+    sd1=sqrt(sxx/n)-(xmean^2)
+    sd2=sqrt(syy/n)-(ymean^2)
+    c=((sxy/n)-xmean*ymean)
+    r=c/(sd1*sd2)
+    if r >0 then
+        print("x and y are positively related/n")
+    else
+        print("x and y are negatively related/n")
+    end
+    disp(r)
+endfunction
 
 
