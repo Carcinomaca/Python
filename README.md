@@ -348,6 +348,7 @@ top.mainloop()
 
 # 5]demo radio button from tkinter import * root = Tk()
 v = IntVar() Radiobutton(root,text="GFG",variable=v,value=1).pack(anchor = W) Radiobutton(root,text="MIT",variable=v,value=2).pack(anchor = W) mainloop()
+
 import tkinter as tk
 
 root = tk.Tk()
@@ -355,6 +356,7 @@ var = tk.IntVar()
 
 tk.Checkbutton(root, text="Check me", variable=var).pack()
 root.mainloop()
+
 import tkinter as tk
 
 root = tk.Tk()
@@ -364,6 +366,7 @@ tk.Radiobutton(root, text="Option 1", variable=var, value="1").pack()
 tk.Radiobutton(root, text="Option 2", variable=var, value="2").pack()
 
 root.mainloop()
+
 import tkinter as tk
 
 root = tk.Tk()
@@ -374,6 +377,7 @@ for item in ["Item 1", "Item 2", "Item 3"]:
     listbox.insert(tk.END, item)
 
 root.mainloop()
+
 import tkinter as tk
 
 root = tk.Tk()
